@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Học Viên</title>
+</head>
+<body>
+    <form action="dangkyhocvien.html" method="POST">
+        <div style="background-color: yellowgreen ;width: 420px; height: 280px;"><table style="width: 350px;">
+        
+        <div style="width: 410px; background-color: aquamarine; text-align: left; color: blue; margin-left: 5px;">
+            <h2>
+            ĐĂNG KÝ HỌC VIÊN
+        </h2>
+        <tr>
+            <td style="color: blue;">Họ Và Tên</td>
+            <td><input type="textbox" name="Name" size=""></td>
+        </tr>
+        <tr>
+            <td style="color: blue; text-align: left;">Ngày Sinh</td>
+            <td><input type="textbox" name="dateofbirth" size="12"></td>
+        </tr>
+        <tr>
+            <td style="color: blue; text-align: left;">Giới Tính</td>
+            <td><input type="radio" name="gender">Nam
+                <input type="radio" name="gender">Nữ
+            </td>
+        </tr>
+        <tr>
+            <td style="color: blue; text-align: left;">Địa chỉ</td>
+            <td><textarea name="address" id="" cols="20" rows="3"></textarea></td>
+        </tr>
+        <tr>
+            <td style="color: blue; text-align: left;">Lớp</td>
+            <td><select name="-Chọn Lớp-" id="grade">
+                <option value="lop">--Chọn Lớp--</option>
+                <option value="llop">Lớp 10</option>
+                <option value="llop">Lớp 11</option>
+                <option value="llop">Lớp 12</option>
+            </select>
+            </td>
+        </tr>
+            <tr>
+                <td style="color: blue; text-align: left;">Email</td>
+                <td><input type="textbox" name="email" size="20"></td>
+            </tr>
+            <tr>
+                <td style="color: blue; text-align: left;">Điện thoại</td>
+                <td><input type="number" name="Name" size="15"></td>
+            </tr>
+       <tr>
+        <td></td>
+        <td style="column-span: 2;"><input type="button" value="Đăng Ký">
+            <input type="reset" value="Nhập Lại"></td>
+       </tr>
+        </div>
+    </div>
+</table>
+</div>
+</form>
+</body>
+</html>
