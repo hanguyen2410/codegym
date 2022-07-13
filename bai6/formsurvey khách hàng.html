@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="laysurveykhachhang.html" method="POST">
+        <h2> Market Research Survey</h2>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+        <h5>What is your age range?</h5>
+        <select style="width: 200px;">
+            <option value="range">18-24</option>
+            <option value="range">25-34</option>
+            <option value="range">35-50</option>
+            <option value="range">50+</option>
+        </select>
+        <h5>What is your yearly income range?</h5>
+        <select name="income" id="income">
+            <option value="income">$0 - $25,000</option>
+            <option value="income">$25,001 - $50,000</option>
+            <option value="income">$50,001 - $100,000</option>
+            <option value="income">$100,000+</option>
+        </select>
+
+        <h5>Gender identity</h5>
+
+        <input type="radio" name="gender" onchange="changeGender()">Male<br><br>
+        <input type="radio" name="gender" onchange="changeGender()">Female<br><br>
+        <input type="radio" name="gender" onchange="changeGender()">Nonbinary<br><br>
+        <input type="radio" name="gender" onchange="changeGender()">Other<br><br>
+        <input type="text" name="other" style="margin-left: 50px;" oninput="enterValue()">
+        <p id="message" style="margin-left: 50px; display: none;">Maximum of 250 characters. Current Used: 0 characters.
+        </p>
+
+        <h5>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h5>
+        <input type="checkbox" name="product">Product 1<br>
+        <input type="checkbox" name="product">Product 2<br>
+        <input type="checkbox" name="product">Product 3<br>
+
+        <h5>How often would you use our new product</h5>
+        <input type="radio" name="newproduct">Daily<br>
+        <input type="radio" name="newproduct">Weekly<br>
+        <input type="radio" name="newproduct">Monthly<br>
+
+        <h5>What would you pay for the new product?</h5>
+        <p>
+            <span style="float: left;">
+                $ <input type="number" style="width: 70px;">
+                <label style="display: block;">
+                    Dollars
+                </label>
+
+            </span>
+            <span style="float: left;"> . </span>
+            <span>
+                <input type="number" style="width: 20px;display: block;">
+                Cents
+            </span>
+        </p>
+        <h5>What features would you like to see in the new product.</h5>
+        <textarea name="newproduct1" id="seenewproduct" cols="200" rows="5"></textarea>
+        <p>please rate your level of agreement with the following statements.</p>
+        <table border="1">
+            <tr style="background-color: #e6e6e6;">
+                <th style="width: 700px;">&nbsp;</th>
+                <td style="width: 200px; text-align: center;">Strongly Disagree</td>
+                <td style="width: 200px; text-align: center;">Disagree</td>
+                <td style="width: 200px; text-align: center;">Agree</td>
+                <td style="width: 200px; text-align: center;">Strongly Agree</td>
+            </tr>
+            <tr>
+                <td><b>Our products are priced fairly</b></th>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel"><br>1
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel"><br>2
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel"><br>3
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel"><br>4
+                </td>
+            </tr>
+            <tr style="background-color: #e6e6e6;">
+                <td><b>Our products are high quality</b></th>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel1"><br>1
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel1"><br>2
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel1"><br>3
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel1"><br>4
+                </td>
+            </tr>
+            <tr>
+                <td><b>You would recommend our product to a friend or coworker</b></th>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel2"><br>1
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel2"><br>2
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel2"><br>3
+                </td>
+                <td style="text-align: center;">
+                <input type="radio" name="ratelevel2"><br>4
+                </td>
+            </tr>    
+        </table><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        function changeGender() {
+            if (document.getElementsByName("gender")[3].checked == true) {
+                document.getElementById("message").style.display = 'block';
+            }
+            else {
+                document.getElementById("message").style.display = 'none';
+            }
+        }
+
+        function enterValue() {
+            let other = document.getElementsByName("other")[0].value;
+            document.getElementById('message').innerText =
+                "Maximum of 250 characters. Current Used: " + other.length + " characters."
+        }
+    </script>
+</body>
+
+</html>
