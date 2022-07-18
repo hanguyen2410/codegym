@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Đơn Giản</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        td {
+            width: 150px;
+            height: 120px;
+        }
+      
+      input[type=button] {
+                font-family:'Times New Roman', Times, serif;
+                font-size: 50px;
+                background-color: #1fb597;
+                color: white;
+                border: solid black 0.5px;
+                width: 75%;
+                border-radius: 5px;
+                height: 75%;
+                outline: none;
+               margin-left: 20px;
+      }
+      #manhinh {
+        width: 620px;
+        font-size: 50px;
+        margin-left: 300px;
+        border: solid rgb(109, 109, 109) 5px;
+      }
+      table {
+        margin-left: 300px;
+      }
+      
+    </style>
+</head>
+<body>
+    <h1>Máy Tính Đơn Giản</h1>
+ <table border="5">
+    <tbody>
+<tr><input type="text" id="manhinh" class="manhinh" ></tr>
+<tr>
+    <td><input type="button" value="1" onclick="hien('1')"></td>
+    <td><input type="button" value="2" onclick="hien('2')"></td>
+    <td><input type="button" value="3" onclick="hien('3')"></td>
+    <td><input type="button" value="+" onclick="hien('+')"></td>
+</tr>
+<tr>
+    <td><input type="button" value="4" onclick="hien('4')"></td>
+    <td><input type="button" value="5" onclick="hien('5')"></td>
+    <td><input type="button" value="6" onclick="hien('6')"></td>
+    <td><input type="button" value="-" onclick="hien('-')"></td>
+</tr>
+<tr>
+    <td><input type="button" value="7" onclick="hien('7')"></td>
+    <td><input type="button" value="8" onclick="hien('8')"></td>
+    <td><input type="button" value="9" onclick="hien('9')"></td>
+    <td><input type="button" value="*" onclick="hien('*')"></td>
+</tr>
+<tr>
+    <td><input type="button" value="C" onclick="xoa()"></td>
+    <td><input type="button" value="0" onclick="hien('0')"></td>
+    <td><input type="button" value="=" onclick="ketqua()"></td>
+    <td><input type="button" value="/" onclick="hien('/')"></td>
+</tr>
+ </tbody>
+</table>   
+<script src="maytinhdongian.js"></script>
+</body>
+</html>
