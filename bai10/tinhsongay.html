@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Số Ngày</title>
+</head>
+<body>
+    <form action="">
+        <h2>Kiểm Tra Số Ngày Trong Tháng</h2>
+        <input type="number" id="month" placeholder="Nhập Tháng"  style="width: 10%;">
+        <input type="button" value="Tính Số Ngày" onclick="check()">
+        <p id="text"></p>
+    </form>
+</body>
+<script>
+let thang1 = "1";
+let thang3 = "3";
+let thang5 = "5";
+let thang7 = "7";
+let thang8 = "8";
+let thang10 = "10";
+let thang12 = "12";
+let thang4 = "4";
+let thang6 = "6";
+let thang9 = "9";
+let thang11 = "11";
+let thang2 = "2";
+    function check() {
+        let month1 = document.getElementById("month").value
+        switch (month1) {
+        case thang1:
+        case thang3:
+        case thang5:
+        case thang7:
+        case thang8:
+        case thang10:
+        case thang12:
+            document.getElementById("text").innerHTML = "Tháng " + month1 + " có 31 ngày";
+            break;
+        case thang4:
+        case thang6:
+        case thang9:
+        case thang11:
+             document.getElementById("text").innerHTML = "Tháng " + month1 + " có 30 ngày";
+            break;
+        case thang2:
+        document.getElementById("text").innerHTML = "Tháng " + month1 + " có 28 hoặc 29 ngày";
+            break;
+        default:
+        document.getElementById("text").innerHTML = "Vui Lòng Nhập Đúng Số Tháng";
+        }
+    }
+</script>
+</html>
