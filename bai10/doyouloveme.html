@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me</title>
+    <style>
+        h1 {
+            color: brown;
+            text-align: center;
+        }
+        input[type=button] {
+            background-color: aqua;
+            margin-left: 500px;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Do You Love Me?</h1>
+    <input type="button" value=" YES " onclick="yes()">
+    <input type="button" value=" NO " id="no1" style="position: absolute; margin-left: 50px;" onmouseover="no2()">
+    <h2 style="text-align: center; color: red" id="result"></h2></h2>
+</body>
+<script>
+    function yes() {
+        document.getElementById("result").innerHTML = 'I Love You Too <3';
+    }
+    function no2() {
+        var x = Math.round(Math.random() * window.innerWidth);
+        var y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('no1').style.left = x + 'px';
+        document.getElementById('no1').style.top = y + 'px';
+    }
+</script>
+</html>
