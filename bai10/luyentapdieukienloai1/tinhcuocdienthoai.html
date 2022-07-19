@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cước điện thoại</title>
+</head>
+<body>
+    <h1>Tính cước điện thoại theo hộ gia đình</h1>
+    <table>
+        <tr><td>Nhập Số kW·h sử dụng điện</td>
+            <td><input type="number" id="sodien" placeholder="Nhập Số kW-h"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Kết Quả" onclick="ketqua()"></td>
+        </tr>
+    </table>
+    <p id="result" style="font-size: 30px;color: red"></p>
+</body>
+<script>
+    function ketqua () {
+        let a = document.getElementById("sodien").value;
+        let tieuthu = a * 3000
+        document.getElementById('result').innerHTML = 'Số Tiền Bạn Phải Trả Là ' + tieuthu + ' VNĐ cho ' + a + ' kW-h tiêu thụ.'
+    }
+</script>
+</html>

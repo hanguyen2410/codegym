@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doanh Số Bán Hàng</title>
+</head>
+<body>
+    <h1>Bảng Tính Doanh Số Bán Hàng Tháng 7</h1>
+    <table>
+        <tr>
+            <td>Nhập Doanh Số Đã Bán</td>
+            <td><input type="number" id="doanhso" placeholder="Nhập Số Lượng"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td></tr>
+    </table>
+    <p id="result" style="font-size: 30px; color: red"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = document.getElementById('doanhso').value;
+        if (a >= 1000) {
+            document.getElementById("result").innerHTML = 'Đạt Chỉ Tiêu Giỏi, Được hưởng 20% hoa hồng'
+        } else if (a < 1000 && a >= 500) {
+            document.getElementById("result").innerHTML = 'Đạt Chỉ Tiêu Khá, Được hưởng 10% hoa hồng'
+        } else if (a < 500 && a >= 250) {
+            document.getElementById("result").innerHTML = 'Đạt Chỉ Tiêu Trung Bình, Được hưởng 5% hoa hồng'
+        } else {
+            document.getElementById("result").innerHTML = 'Không Đạt Chỉ Tiêu'
+        }
+    }
+</script>
+</html>

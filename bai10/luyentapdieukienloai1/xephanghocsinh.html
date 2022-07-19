@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp hạng học lực học sinh</title>
+</head>
+<body>
+    <h1>Xếp hạng học lực học sinh</h1>
+    <table>
+        <tr>
+            <td>Nhập Điểm Thi Giữa Kỳ</td>
+            <td><input type="number" id="giuaky"></td>
+        </tr>
+        <tr>
+            <td>Nhập Điểm Thi Cuối Kỳ</td>
+            <td><input type="number" id="cuoiky"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td></tr>
+    </table>
+    <p id="result" style="font-size: 30px; color: brown;"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = Number(document.getElementById("giuaky").value);
+        let b = Number(document.getElementById("cuoiky").value);
+        let tong = Number((a + b) / 2);
+        if (tong >= 8.0) {
+            document.getElementById('result').innerHTML = 'Học Sinh Giỏi';
+        } else if (tong < 8.0 && tong >= 6.5) {
+            document.getElementById('result').innerHTML = 'Học Sinh Khá';
+        } else if (tong < 6.5 && tong >= 5.0) {
+            document.getElementById('result').innerHTML = 'Học Sinh Trung Bình';
+        } else {
+            document.getElementById('result').innerHTML = 'Học Sinh Yếu';
+        }
+    }
+</script>
+</html>

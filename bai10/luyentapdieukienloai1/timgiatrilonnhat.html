@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị lớn nhất của 3 số</title>
+</head>
+<body>
+    <h1>Tìm Giá Trị Lớn Nhất</h1>
+    <table>
+        <tr>
+        <td>Nhập Số A</td>
+        <td><input type="number" id="soA" placeholder="Nhập Số A"></td>
+    </tr>
+    <tr>
+        <td>Nhập Số B</td>
+        <td><input type="number" id="soB" placeholder="Nhập Số B"></td>
+    </tr>
+    <tr>
+        <td>Nhập Số C</td>
+        <td><input type="number" id="soC" placeholder="Nhập Số C"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Kết Quả" onclick="ketqua()"></td>
+    </tr>
+    
+        
+    
+    </table>
+    <p id="result" style="color: red; font-size: 30px;"></p>
+
+</body>
+<script>
+    function ketqua() {
+        let a = Number(document.getElementById('soA').value);
+        let b = Number(document.getElementById('soB').value);
+        let c = Number(document.getElementById('soC').value);
+        if (a > b) {
+            if (a > c) {
+                document.getElementById('result').innerHTML = 'Số ' + a + ' là số lớn nhất';
+            } else {
+                document.getElementById('result').innerHTML = 'Số ' + c + ' là số lớn nhất';
+            }
+            
+        }else {
+            if (b > c) {
+                document.getElementById('result').innerHTML = 'Số ' + b + ' là số lớn nhất';
+            } else {
+                document.getElementById('result').innerHTML = 'Số ' + c + ' là số lớn nhất';
+            }
+        }
+    }
+</script>
+</html>

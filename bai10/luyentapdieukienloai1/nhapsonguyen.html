@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập Số Nguyên</title>
+</head>
+<body>
+    <h2>So Sánh Số Nguyên</h2>
+    <table>
+        <tr>
+            <td>Nhập Số Nguyên</td>
+            <td><input type="number" id="nhapso" placeholder="Nhập Số Nguyên"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Kết Quả" onclick="ketqua()"></td>
+        </tr>
+        <tr><td>
+        <p id="result"></p></td>
+    </tr>
+    </table>
+    <script>
+        function ketqua() {
+            let a = document.getElementById('nhapso').value;
+            if (a > 0) {
+                document.getElementById('result').innerHTML = 'Số ' + a + ' Lớn Hơn 0';
+            } else {
+                document.getElementById('result').innerHTML = 'Số ' + a + ' Bé Hơn 0';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A có chia hết cho B</title>
+</head>
+<body>
+    <table>
+        <h1>A Có Chia Hết Cho B ?</h1>
+        <tr>
+          <td>Nhập Số A</td>
+          <td><input type="text" id="nhapsoa"></td>
+        </tr>
+        <tr>
+            <td>Nhập Số B</td>
+            <td><input type="text" id="nhapsob"></td>
+          </tr>
+          <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td></tr>
+    </table>
+    <p id="result"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = document.getElementById("nhapsoa").value;
+        let b = document.getElementById("nhapsob").value;
+        if (a % b == 0) {
+            document.getElementById('result').innerHTML = 'True';
+        } else {
+            document.getElementById('result').innerHTML = 'False';
+        }
+    }
+</script>
+</html>
