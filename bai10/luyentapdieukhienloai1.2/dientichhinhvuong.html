@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện Tích Hình Vuông</title>
+</head>
+<body>
+    <h1>Diện Tích Hình Vuông</h1>
+    <table>
+        <tr>
+            <td>Nhập a</td>
+            <td><input type="number" id="nhapa" placeholder="Đơn Vị Mét"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td></tr>
+    </table>
+    <p id="result" style="font-size: 30px; color:blue"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = document.getElementById('nhapa').value;
+        let b = a * a;
+        document.getElementById('result').innerHTML = 'Diện tích hình vuông = ' + b +' Mét Vuông.'
+    }
+   </script>
+</body>
+</html>

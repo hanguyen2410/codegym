@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Thuế Thu Nhập Cá Nhân</title>
+</head>
+<body>
+    <h1>Tính Thuế Thu Nhập</h1>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Nhập Lương : </td>
+                <td><input type="number" id="value" placeholder="Giá Trị VNĐ" style="width: 300px;"></td>
+            </tr>
+            
+            <tr>
+                <td>Thuế Phải Nộp : </td>
+                <td><input type="text" id="result" disabled style="width: 300px;"></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td><input type="button" value="Tổng Tiền" onclick="check()" style="width: 100px;">
+                    <input type="button" value="Nhập Lại" onclick="reset()" style="width: 100px;"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+function check() {
+    let a = Number(document.getElementById("value").value);
+    let result ='';
+    let total = '';
+    if (a != 0 && a > 0) {
+        if (a <= 5000000) {
+            result = (a * 5) / 100;
+            document.getElementById("result").value = result + ' VND'
+        } else if (a > 5000000 && a <= 10000000) {
+            result = (250000) + ((a - 5000000) * 10 / 100);
+            document.getElementById("result").value = result + ' VND'
+        } else if (a > 10000000 && a <=18000000) {
+            result = (250000) + (500000) + ((a - 10000000) * 15 / 100);
+            document.getElementById("result").value = result + ' VND'
+        } else if (a > 18000000 && a <= 32000000) {
+            result = (250000) + (500000) + (1200000) + ((a - 18000000) * 20 / 100);
+            document.getElementById("result").value = result + ' VND'
+        } else if (a > 32000000 && a <= 52000000) {
+            result = (250000) + (500000) + (1200000) + (2800000) + ((a - 32000000) * 25 / 100);
+            document.getElementById("result").value = result + ' VND'
+        } else if (a > 52000000 && a <= 80000000) {
+            result = (250000) + (500000) + (1200000) + (2800000) + (5000000) + ((a - 52000000) * 30 / 100);
+            document.getElementById("result").value = result + ' VND'
+        } else {
+            result = (250000) + (500000) + (1200000) + (2800000) + (5000000) +(8400000) + ((a - 80000000) * 35 / 100);
+            document.getElementById("result").value = result + ' VND'
+        } 
+    } else {
+        document.getElementById("result").value = 'Xin nhập lại';
+    }
+}
+function reset() {
+    document.getElementById("result").value = null;
+    document.getElementById("value").value = null;
+}
+</script>
+</html>

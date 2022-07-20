@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện Tích Hình Chữ Nhật</title>
+</head>
+<body>
+    <h1>Diện Tích Hình Chữ Nhật</h1>
+    <table>
+        <tr>
+            <td>Nhập a</td>
+            <td><input type="number" id="nhapa" placeholder="Đơn Vị Mét"></td>
+        </tr>
+        <tr>
+            <td>Nhập b</td>
+            <td><input type="number" id="nhapb" placeholder="Đơn Vị Mét"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td>
+            <td><input type="button" value="Nhập Lại" onclick="nhaplai()"></td></tr>
+        
+    </table>
+    <p id="result" style="font-size: 30px; color:blue"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = document.getElementById('nhapa').value;
+        let b = document.getElementById('nhapb').value;
+        let c = a * b;
+        document.getElementById('result').innerHTML = 'Diện tích hình chữ nhật = ' + c +' Mét Vuông.'
+    }
+    function nhaplai() {
+        document.getElementById('nhapb').value = '';
+        document.getElementById('nhapa').value = '';
+        document.getElementById('result').innerHTML = null;
+    }
+    
+   </script>
+</body>
+</html>

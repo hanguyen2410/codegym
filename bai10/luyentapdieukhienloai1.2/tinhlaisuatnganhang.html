@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lãi Suất Ngân Hàng</title>
+</head>
+<body>
+    <h1>Tính Lãi Suất Ngân Hàng</h1>
+    <table border="1" style="font-size: 20px;">
+        <tbody>
+            <tr>
+                <td>Nhập Số Tiền Vay : </td>
+                <td><input type="number" placeholder="Đơn Vị VNĐ" style="width: 250px; font-size: 20px;" id="money"></td>
+            </tr>
+            <tr>
+                <td>Số Tháng Vay : </td>
+                <td><input type="number" placeholder="Tháng" style="width: 250px; font-size: 20px;" id="month"></td>
+            </tr>
+            <tr>
+                <td>Lãi Suất Ngân Hàng : </td>
+                <td><input type="text" style="width: 250px; font-size: 20px;" id="laisuat" placeholder="%"></td>
+            </tr>
+            <tr>
+                <td>Tổng Tiền </td>
+                <td><input type="text" placeholder="Đơn Vị VNĐ" style="width: 250px; font-size: 20px;"  id="total" disabled></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="Kết Quả" onclick="total()" style="width: 100px;  font-size: 20px;">
+                    <input type="button" value="Nhập Lại" onclick="reset()" style="width: 100px;  font-size: 20px;"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    function total() {
+        let a = Number(document.getElementById("money").value);
+        let b = Number(document.getElementById("month").value);
+        let c = Number(document.getElementById("laisuat").value);
+        let d = Number(a * (Math.pow((1 + (c / 100)),b))).toFixed(1); 
+        document.getElementById("total").value = d + 'VNĐ';
+    }
+    function reset () {
+        document.getElementById("laisuat").value = null;
+        document.getElementById("month").value = null;
+        document.getElementById("money").value = null;
+        document.getElementById("total").value = null;
+    }
+</script>
+</html>

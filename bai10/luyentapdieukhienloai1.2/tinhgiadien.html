@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Giá Điện</title>
+</head>
+<body>
+    <h1>Tính Giá Tiền Điện</h1>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Nhập Số Kw-h: </td>
+                <td><input type="number"  id="number" placeholder="Số Kw-h đã sử dụng" style="width: 250px" ></td>
+            </tr>
+            
+            <tr>
+                <td>Thành Tiền: </td>
+                <td><input type="text" id="result" disabled style="width: 250px;"></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td><input type="button" value="Tổng Tiền" style="width: 120px" onclick="check()">
+                    <input type="button" value="Nhập Lại" style="width: 120px" onclick="reset()"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    function check() {
+        let a = Number(document.getElementById("number").value);
+        let result = '';
+        let total = '';
+        if (a > 0 && a <= 50) {
+           result = Number(a * 1.678);
+           total = result + (result * 10 / 100);
+           document.getElementById("result").value = + total + ' VNĐ'; 
+        } else if (a > 50 && a <= 100) {
+            result = Number((50 * 1.678) + ((a - 50) * 1.734));
+            total = result + (result * 10 / 100);
+            document.getElementById("result").value = + total + ' VNĐ';
+        } else if (a > 100 && a <= 200) {
+            result = Number((50 * 1.678) + (50 * 1.734) + ((a - 100) * 2.014));
+            total = result + (result * 10 / 100);
+            document.getElementById("result").value = + total + ' VNĐ';
+        } else if ( a > 200 && a <= 300) {
+            result = Number((50 * 1.678) + (50 * 1.734) + (100 * 2.014) + ((a - 200) * 2.536));
+            total = result + (result * 10 / 100);
+            document.getElementById("result").value = + total + ' VNĐ';
+        } else if (a > 300 && a <= 400) {
+            result = Number((50 * 1.678) + (50 * 1.734) + (100 * 2.014) + (100 * 2.536) + ((a - 300) * 2.834));
+            total = result + (result * 10 / 100);
+            document.getElementById("result").value = + total + ' VNĐ';
+        } else {
+            result = Number((50 * 1.678) + (50 * 1.734) + (100 * 2.014) + (100 * 2.536) + (100 * 2.834) + ((a - 400) * 2.927));
+            total = result + (result * 10 / 100);
+            document.getElementById("result").value = + total + ' VNĐ';
+        } 
+    }
+    function reset() {
+        document.getElementById("number").value = null;
+        document.getElementById("result").value = null;
+    }
+    
+</script>
+</html>

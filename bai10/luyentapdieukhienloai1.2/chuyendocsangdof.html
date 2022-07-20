@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển Độ C sang độ F</title>
+</head>
+<body>
+    <h1>Chuyển Độ C Sang Độ F</h1>
+    <table>
+        <tr>
+            <td>Nhập giá trị Độ C</td>
+            <td><input type="number" id="doc" placeholder="Nhập Độ C"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td></tr>
+    </table>
+    <p id="result" style="font-size: 30px; color:blue"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = document.getElementById('doc').value;
+        let b = a * 9/5 + 32;
+        document.getElementById('result').innerHTML = a + ' Độ C = ' + b +' Độ F.'
+    }
+</script>
+</html>

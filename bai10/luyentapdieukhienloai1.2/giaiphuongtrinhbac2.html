@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Phương Trình Bậc 2</title>
+</head>
+<body>
+    <h1>Giải Phương Trình Bậc 2</h1>
+    <h3>ví dụ : ax<sup>2</sup> + bx + c = 0</h3>
+    <table>
+        <tr>
+            <td>Nhập a</td>
+            <td><input type="number" id="nhapa" placeholder="nhập a"></td>
+        </tr>
+        <tr>
+            <td>Nhập b</td>
+            <td><input type="number" id="nhapb" placeholder="nhập b"></td>
+        </tr>
+        <tr>
+            <td>Nhập c</td>
+            <td><input type="number" id="nhapc" placeholder="nhập c"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td>
+            <td><input type="button" value="Nhập Lại" onclick="nhaplai()"></td></tr>
+        
+    </table>
+    <p id="result" style="font-size: 30px; color:blue"></p>
+    
+</body>
+<script>
+    function ketqua() {
+        let a = Number(document.getElementById('nhapa').value);
+        let b = Number(document.getElementById('nhapb').value);
+        let c = Number(document.getElementById('nhapc').value);
+        let d = Math.pow (b,2) - (4 * a * c) ;
+        let e = '';
+        let f = '';
+        let g = -c / b;
+        if (a == 0) {
+        if (b != 0) {
+        document.getElementById('result').innerHTML = 'Kết Quả: Với a = ' + a + ' Và b = '+ b + ' Và c = ' + c + ' ta có 1 nghiệm x = ' + g;
+    } else if (b == 0 && c == 0) {
+        document.getElementById('result').innerHTML = 'Phương Trình Có Vô Số Nghiệm.';
+    } 
+    else {
+        document.getElementById('result').innerHTML = 'Phương Trình Vô Nghiệm.';
+    }
+    }
+    else {
+    if (d > 0) {
+            e = (-b + Math.sqrt(d)) / (2 * a);
+            f = (-b - Math.sqrt(d)) / (2 * a);
+            document.getElementById('result').innerHTML = 'Phương trình có 2 nghiệm là : ' + e + ' Và ' + f +'.';
+        } else if (d == 0) {
+            e = (-b) / (2 * a);
+            f = (-b) / (2 * a)
+            document.getElementById('result').innerHTML = 'Phương trình có 1 nghiệm Kép là: ' + e + '.';
+        } else {
+            document.getElementById('result').innerHTML = 'Phương trình Vô Nghiệm.'
+        }
+    }
+}
+
+</script>
+</html>

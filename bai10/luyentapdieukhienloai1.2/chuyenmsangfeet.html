@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển mét sang feet</title>
+</head>
+<body>
+    <h1>Chuyển từ Mét sang Feet</h1>
+    <table>
+        <tr>
+            <td>Nhập giá trị Mét</td>
+            <td><input type="number" id="met" placeholder="Nhập Mét"></td>
+        </tr>
+        <tr><td><input type="button" value="Kết Quả" onclick="ketqua()"></td></tr>
+    </table>
+    <p id="result" style="font-size: 30px; color:rgb(12, 184, 118)"></p>
+</body>
+<script>
+    function ketqua() {
+        let a = document.getElementById("met").value;
+        let b = a * 3.2808;
+        document.getElementById('result').innerHTML = a + ' Mét = ' + b +' Feet.';
+    }
+    </script>
+</body>
+</html>

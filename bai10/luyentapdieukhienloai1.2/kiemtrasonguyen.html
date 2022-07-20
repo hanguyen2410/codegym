@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiếm Tra Số Nguyên</title>
+</head>
+<body>
+    <h1>Kiểm Tra Số Tuổi</h1>
+    <table>
+        <tr>
+            <td>Nhập Số</td>
+            <td><input type="number" id="nhapso" placeholder="Nhập Số"></td>
+        </tr>
+        <tr><td><input type="button" value="Kiểm Tra" onclick="check()"></td>
+            <td><input type="button" value="Nhập Lại" onclick="reset()"></td></tr>
+        
+    </table>
+    <p id="result" style="font-size: 30px; color:blue"></p>
+</body>
+<script>
+    function check() {
+        let a = parseInt(document.getElementById("nhapso").value);
+    if (a > 0 && a < 120) {
+        document.getElementById("result").innerHTML = 'Số Tuổi Của Bạn Là: ' + a + ' Tuổi';
+    }  else {
+        document.getElementById("result").innerHTML = 'Số Tuổi Không Hợp Lệ'
+    }
+    }
+    function reset() {
+        document.getElementById("nhapso").value = null;
+        document.getElementById("result").innerHTML = null;
+    }
+    
+
+</script>
+</html>
