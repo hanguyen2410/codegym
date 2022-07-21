@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuỗi Fibonacci</title>
+</head>
+<body>
+    <h1>Chuỗi Fibonacci Chia hết cho 5</h1>
+    <script>
+        let number = parseInt(prompt('Enter the number of terms :'));
+        let i = 0;
+        let j = 1;
+        let total
+        for (let a = 1; a <= number; a++) {
+            document.write(i + '<br>');
+            total = i + j;
+            i = j;
+            j = total;
+            if (total % 5 == 0) {
+                document.write(total)
+                break;
+
+            }
+        }
+    </script>
+</body>
+</html>

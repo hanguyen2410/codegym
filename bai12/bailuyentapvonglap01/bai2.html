@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <h1>Thông Tin Nhiệt Độ</h1>
+    <script>
+        let i = Number(prompt('Nhập Nhiệt Độ Hiện Tại :'));
+        while (Number.isInteger(i) == false) {
+            i = Number(prompt('Nhập Nhiệt Độ Hiện Tại :'));
+        }
+        
+        
+        if (i > 100) {
+        document.write('Quý Khách Vui Lòng Giảm Nhiệt Độ.')    
+        } else if (i < 20) {
+            document.write('Quý Khách Vui Lòng Tăng Nhiệt Độ.')
+        } else {
+            document.write('Nhiệt Độ Bình Thường.')
+        }
+   
+    </script>
+</body>
+</html>

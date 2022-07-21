@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="doanso()">Bắt đầu</button>
+</body>
+<script>
+    function doanso() {
+        let number = Number(prompt('Nhập Khoảng Số Muốn Dự Đoán: '))    
+        let number_random = Math.floor(Math.random() * number);
+        let number_dudoan = Number(prompt('Nhập Số Muốn Dự Đoán'))
+        let dem = 1;
+        if (number_dudoan != number_random) {
+                while(dem < 4) {
+                    if (number_dudoan < number_random) {
+                        alert('Số Bạn Dự Đoán Bé Hơn');
+                    } else if (number_dudoan > number_random) {
+                        alert('Số Bạn Dự Đoán Lớn Hơn');
+                    } 
+                    dem++;
+                    Number(prompt('Nhập Số Muốn Dự Đoán'));
+                }
+                if (dem == 4) {
+                    alert ('Bạn Đã Hết Số Lần Dự Đoán')
+                }
+        } else {
+            document.write("Bạn Đã Đoán Đúng. Congratulation!")
+        }
+        }
+</script>
+</html>

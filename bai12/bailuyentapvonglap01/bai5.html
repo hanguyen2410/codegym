@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Tổng Của 20 Số Đầu Tiên Trong Fibonacci</title>
+</head>
+<body>
+    <h1>Tổng 20 Số Đầu Tiên Trong Fibonacci</h1>
+        
+</body>
+<script>
+    
+        let i = 0;
+        let j = 1;
+        let total;
+        let total20 = j + i;
+        for (let a = 1; a <= 18  ; a++) {
+            total = i + j;
+            total20= total + total20;
+            i = j;
+            j = total;      
+        }
+        document.write('Tổng của 20 số Fibonacci là: ' + total20)
+</script>
+</html>
