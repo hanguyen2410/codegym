@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển Thị Số Nguyên Tố</title>
+</head>
+<body>
+    <script>
+        let numbers = parseInt(prompt("Nhập Số Lượng Nguyên Tố Cần In Ra :"));
+        let count = 0;
+        i = 0
+        let N = 2
+        for (N = 2; N < 10000 ;N++) {
+        if (count < numbers) {
+        for (let j = 1; j <= N; j++ ) {
+                if (N % j == 0){
+                    i +=1;
+                }
+            }
+             if (i == 2){
+                document.write(N + '<br>');
+                count += 1;
+            }
+            i = 0;
+
+          } else {
+            break;
+          }
+           
+          }
+        
+    </script>
+</body>
+</html>
