@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = Number(prompt('Nhập Số Tiền Gửi:'))
+    while(Number.isInteger(a) == false) {
+            a = Number(prompt('Nhập Số Tiền Gửi:'));
+    }
+    let b = Number(prompt('Nhập Số Tháng Vay: '))
+    while(Number.isInteger(b) == false) {
+        b = Number(prompt('Nhập Số Tháng Vay: '));
+    }
+    let c = Number(prompt('Nhập Lãi Suất Ngân Hàng: '))
+    while(Number.isInteger(c) == false) {
+        c = Number(prompt('Nhập Lãi Suất Ngân Hàng: '));
+    }
+    let d = Number(a * (Math.pow((1+ (c / 100)),b))).toFixed(1);
+
+    
+    
+    
+    document.write(d + 'VNĐ');
+</script>
+</body>
+</html>

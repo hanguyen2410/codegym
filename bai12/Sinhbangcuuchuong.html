@@ -10,15 +10,16 @@
     <h1 style="margin-left : 100px;">Bảng Cửu Chương</h1>
     <script>
         let a;
-        a = "<table border='1' width ='300' cellspacing='0' cellpadding='5'>"
+        a = "<table border='1' width ='300' cellspacing='5' cellpadding='10'>"
             for (i = 1 ; i < 10; i++) {
-                a = a + "<tr>";
+                a += "<tr>";
                     for (j = 2; j < 10; j++) {
-                        a = a + "<td>" + j + "x" + i + "=" + j*i +  "</td>";
+                        a += `<td>${j}x${i}=${j*i}</td>`
+                        //a + "<td>" + j + "x" + i + "=" + j*i +  "</td>";
                     }
-                    a = a + "</tr>";
+                    a += "</tr>";
             }
-            a = a + "</table>";
+            a += "</table>";
             document.write(a);
     </script>
 </body>

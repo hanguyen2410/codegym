@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giai Thừa của một số nguyên dương</title>
+</head>
+<body>
+    <h1>Giai Thừa Của Một Số Nguyên Dương</h1>
+    <script>
+         //Number(prompt('Nhập Số Nguyên Dương : '))
+        let j = Number(prompt('Nhập Số Nguyên Dương : '));
+        let a = 1;
+        for (let i = 1; i < j; i++) {
+            for(let c = 1 ;c < j; c++ ){
+                i = i * (c+1);
+            }
+            document.write(i + '<br>');
+            }
+    </script>
+</body>
+</html>

@@ -33,7 +33,20 @@
       // } while(j <= 5);
       // i++;
     //}
-    
+    let count = 5;
+    let web = "<table>"
+      web += "<tbody>";
+        for (let row = 1; row <= count; row++); {
+          web += 
+          `<tr id="tr_${row}">
+              <td> Viec ${row}</td>
+              <td>
+                <button onclick = "remove(${row})">Remove</button>
+                </td>
+                </tr>
+          `
+              }
+              
         
   </script>  
    
