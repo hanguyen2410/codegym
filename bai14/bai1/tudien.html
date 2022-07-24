@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ Điển</title>
+</head>
+<body>
+    <label for="text">Nhập Từ</label>
+    <input type="text" id="text">
+    <button onclick="translate1()">Dịch</button>
+    <p id="result"></p>
+</body>
+<script>
+    function translate1() {
+        let arr_eng = ["banana", "apple", "water", "book", "pen","phone","pencil"];
+        let arr_vie = ["chuối", "táo", "nước", "sách", "bút", "điện thoại", "bút chì"];
+        let text = document.getElementById("text").value;
+        let index_eng = 0;
+        let result = "";
+        
+        for (let i = 0; i < arr_eng.length; i++) {
+            if (text == arr_eng[i]) {
+                index_eng = i;
+                for (let j = 0; j < arr_vie.length; j++) {
+                    if (index_eng == j) {
+                        result = arr_vie[j];
+                    }
+                }
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</html>
