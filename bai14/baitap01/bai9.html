@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9</title>
+</head>
+<body>
+    <script>
+        let size1 = Number(prompt('Nhập Số Lượng Phần Tử A : '))
+        let numbers1 = new Array(size1);
+        for ( let i = 0 ; i < numbers1.length; i++) {
+                numbers1[i] = Math.floor(Math.random() * 100 + 1);   
+        }
+        
+
+
+        let size2 = Number(prompt('Nhập Số Lượng Phần Tử B : '))
+        let numbers2 = new Array(size2);
+        for ( let j = 0 ; j < numbers2.length; j++) {
+                numbers2[j] = Math.floor(Math.random() * 100 + 1);
+        }
+        
+
+        
+        let size3 = Number(prompt('Nhập Số Lượng Phần Tử C : '))
+        let numbers3 = new Array(size3)
+        numbers3 = numbers2.concat(numbers1);
+        document.write(numbers3);
+    </script>
+</body>
+</html>

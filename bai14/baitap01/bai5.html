@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Số Nguyên Âm</title>
+</head>
+<body>
+    <script>
+        var numbers = [15,18,20,93,-5,-18,30,85,-25,25,-31,55]
+        var index = 0;  
+        for (var j = 0; j < numbers.length; j++) {
+                if (numbers[j] < 0) {
+                    index = index + 1
+                }
+            }
+            document.write('Tổng Số Nguyên Âm Là : ' + index)
+    </script>
+</body>
+</html>
