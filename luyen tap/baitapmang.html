@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Kế Chương Trình</title>
+    <style>
+        input[type=button] {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        input[type=number] {
+            font-size: 20px;
+            border: solid black 1px;
+            width: 500px;
+        }
+
+        input[type=text] {
+            font-size: 20px;
+            border: solid black 1px;
+            width: 500px;
+        }
+
+        .tb {
+            padding: 10px;
+            border-radius: 1em;
+            height: 500px;
+            width: 600px;
+            margin: auto;
+            background-color: #128345;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        td {
+            color: rgb(240, 234, 234);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Thiết Kế Chương Trình </h1>
+    <table class="tb">
+        <tbody>
+            <tr>
+                <td>
+                    Nhập Size :
+                    <input type="number" name="" id="size" placeholder="Nhập Số lượng phần tử trong mảng">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập Min :
+                    <input type="number" name="" id="minmin" placeholder="Nhập min">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập Max :
+                    <input type="number" name="" id="maxmax" placeholder="Nhập max">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mảng Là :
+                    <input type="text" name="" id="array_1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tổng Giá Trị Trong Mảng :
+                    <input type="text" name="" id="array_sum">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Giá Trị Lớn Nhất :
+                    <input type="text" name="" id="array_big">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Số Chẵn Trong Mảng :
+                    <input type="text" name="" id="array_even">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Kết Quả" onclick="result()">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    function result() {
+        let size = Number(document.getElementById("size").value);
+        let min = Number(document.getElementById("minmin").value);
+        let max = Number(document.getElementById("maxmax").value);
+        let numbers = new Array(size)
+        let total = 0;
+        let count = 0
+
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = Math.floor(Math.random() * (max - min + 1) + min)
+            document.getElementById("array_1").value = "[" + numbers + "]";
+
+            total += numbers[i];
+            document.getElementById("array_sum").value = total;
+
+            if (numbers[i] % 2 ==0) {
+                count++;
+                document.getElementById("array_even").value = count;
+            }
+        }
+        let big = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+            if (big < numbers[i]) {
+                big = numbers[i];
+                document.getElementById("array_big").value = big;
+            }
+        }
+        // for (let i = 0; i < numbers.length; i++) {
+        //     if (numbers[i] % 2 ==0) {
+        //         count++;
+        //         document.getElementById("array_even").value = count;
+        //     }
+        // }
+
+    }
+</script>
+
+</html>
