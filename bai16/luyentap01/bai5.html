@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Tên Chòm Sao</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script>
+        let namestar = prompt("Nhập Tên Ngôi Sao Cần Tìm Kiếm : ");
+        let star_1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let star_2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let result = "";
+        let index = 0;
+        function findStar(namestar) {
+            for (let i = 0; i < star_1.length; i++) {
+                if (namestar == star_1[i]) {
+                    index = i;
+                    for (let j = 0; j < star_2.length; j++) {
+                        if (index == j) {
+                            result = star_2[j];
+                            return result;
+                        }
+                    }
+                }
+                else {
+                    result = "Không tìm thấy ngôi sao.";
+                }
+            }
+            return result;
+        }
+        document.getElementById("result").innerHTML = findStar(namestar);
+    </script>
+</body>
+
+</html>

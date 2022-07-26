@@ -22,6 +22,7 @@
             font-size: 20px;
             border: solid black 1px;
             width: 500px;
+            background-color: aliceblue;
         }
 
         .tb {
@@ -68,30 +69,31 @@
             <tr>
                 <td>
                     Mảng Là :
-                    <input type="text" name="" id="array_1">
+                    <input type="text" name="" id="array_1" readonly>
                 </td>
             </tr>
             <tr>
                 <td>
                     Tổng Giá Trị Trong Mảng :
-                    <input type="text" name="" id="array_sum">
+                    <input type="text" name="" id="array_sum" readonly>
                 </td>
             </tr>
             <tr>
                 <td>
                     Giá Trị Lớn Nhất :
-                    <input type="text" name="" id="array_big">
+                    <input type="text" name="" id="array_big" readonly>
                 </td>
             </tr>
             <tr>
                 <td>
                     Số Chẵn Trong Mảng :
-                    <input type="text" name="" id="array_even">
+                    <input type="text" name="" id="array_even" readonly>
                 </td>
             </tr>
             <tr>
                 <td>
                     <input type="button" value="Kết Quả" onclick="result()">
+                    <input type="button" value="Nhập Lại" onclick="reset()">
                 </td>
             </tr>
         </tbody>
@@ -113,18 +115,22 @@
             total += numbers[i];
             document.getElementById("array_sum").value = total;
 
-            if (numbers[i] % 2 ==0) {
+            if (numbers[i] % 2 == 0) {
                 count++;
                 document.getElementById("array_even").value = count;
             }
-        }
-        let big = numbers[0];
-        for (let i = 0; i < numbers.length; i++) {
-            if (big < numbers[i]) {
-                big = numbers[i];
-                document.getElementById("array_big").value = big;
+            else if (count == 0){
+                document.getElementById("array_even").value = 0;
             }
         }
+        let biggest = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+            if (biggest <= numbers[i]) {
+                biggest = numbers[i];
+                document.getElementById("array_big").value = biggest;
+            }
+        }
+
         // for (let i = 0; i < numbers.length; i++) {
         //     if (numbers[i] % 2 ==0) {
         //         count++;
@@ -132,6 +138,15 @@
         //     }
         // }
 
+    }
+    function reset() {
+        document.getElementById("array_big").value = null;
+        document.getElementById("array_even").value = null;
+        document.getElementById("array_sum").value = null;
+        document.getElementById("array_1").value = null;
+        document.getElementById("maxmax").value = null;
+        document.getElementById("minmin").value = null;
+        document.getElementById("size").value = null;
     }
 </script>
 

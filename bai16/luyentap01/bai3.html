@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('Nhập a: '));
+        let b = parseInt(prompt('Nhập b: '));
+        let result;
+        sum(a,b);
+        function sum(a,b) {
+            if (a > b) {
+                alert("Số thứ nhất lơn hơn số thứ 2");
+            } else {
+                result = a + b;
+                document.write(result);
+                return;
+            }
+            
+        }
+    </script>
+</body>
+</html>
