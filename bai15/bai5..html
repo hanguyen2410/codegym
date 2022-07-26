@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt('Nhập Chuỗi 1 : ')
+        let b = prompt('Nhập Chuỗi 2 : ')
+        let count = 0;
+        for(let i = 0; i < a.length; i++) {
+            for (let j = 0; j < b.length; j++){
+                if (a[i] == b[j] && a.length == b.length ) {
+                    count++;
+                }
+            }
+        }
+        if (count !=0) {
+            document.write('hai chuỗi giống nhau');
+        } else {
+            document.write('hai chuỗi khác nhau')
+        }
+    </script>
+</body>
+</html>
