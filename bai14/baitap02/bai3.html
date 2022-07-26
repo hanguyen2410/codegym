@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đếm Ký Tự Số</title>
 </head>
 <body>
-    
-</body>
-<script>
-    function minArray(arr) {
-        let min = arr[0];
-        for (let i = 1; i < arr.length; i++) {
-            if(arr[i] < min) {
-                min = arr[i];
+    <script>
+        let a = [5,7,2,5,7,2,43,73,7,3,2,7,2,5,2,'a,b,c,b,d,c',4,5,6];
+        let count = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] >= 0 || a[i]<0) {
+                count++;
             }
         }
-        return min;
-    }
-    let arr1 = [3, 5, 1, 8, -3, 7, 8];
-    let min = minArray(arr1);
-    alert(min);
-</script>
+        document.write('Số ký tự số trong mảng là: ' + count)
+    </script>
+</body>
 </html>
