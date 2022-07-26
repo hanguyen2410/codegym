@@ -7,20 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        // let size = Number(prompt('Nhập mảng ký tự : '))
-        let numbers = ['a b c', 'b,c,e', 2, 5, 8, 12, 15, 21]
-        let index = 0;
-
-        for (let i = 0; i < numbers.length; i++) {
-            // numbers[i] = Math.floor(Math.random() * 100 + 1);
-            if (numbers[i] >= 0 || numbers[i] < 0) {
-                index++;
-                
+    
+</body>
+<script>
+    function minArray(arr) {
+        let min = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if(arr[i] < min) {
+                min = arr[i];
             }
         }
-        
-        document.write('Số Lượng Phần Tử Số Là: ' + index);
-    </script>
-</body>
+        return min;
+    }
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let min = minArray(arr1);
+    alert(min);
+</script>
 </html>
