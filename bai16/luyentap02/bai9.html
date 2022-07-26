@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str_1 = ['a', 'b', 'g', 'h', 'j', 'g', 'k', 's', 'u', 'y', 'r', 'x',];
+        let str_2 = ['g'];
+
+        function check(str_1,str_2) {
+            let count = 0;
+            for (let i = 0; i < str_1.length; i++) {
+                if (str_2[0] == str_1[i]) {
+                    count++;
+                } 
+            }
+            if (count > 0) {
+                document.write(`Có xuất hiện trong mảng. <br>`)
+                document.write(`Số lần xuất hiện trong mảng là : ${count} <br>`)    
+            } else {
+                document.write(`-1`);
+            }
+           
+        }
+        check(str_1,str_2);
+    </script>
+</body>
+
+</html>
