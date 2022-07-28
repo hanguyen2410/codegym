@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table td:first-child {
+            width: 100px;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        table tr:hover {
+            background-color: green;
+            cursor: pointer;
+        }
+
+        .done {
+            display: none;
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="create job">
+        <button onclick="createJob()">Create Job</button>
+    </div>
+    <div id="job_area">
+
+
+
+    </div>
+    <script>
+
+        let jobCount = 1;
+        function createtable() {
+            let html = "<table>";
+            html += "<tbody>";
+
+            for (let row = 1; row <= 1; row++) {
+                html += `
+                <tr><td>Số Thứ Tự</td>
+                        <td>Giá Sản Phẩm</td>
+                        </tr>
+                    <tr id="tr_${row}">
+                    <td id='job_name_${row}'>Số ${row}</td>
+                    <td id='job_name2_${row}'>Tên Sản Phẩm ${row}</td>
+                    <td>
+                        <button id="editjob${row}"  onclick="updateJob(${row})">Edit</button>
+                        <button id="savejob${row}"  class="d-none" onclick="saveJob(${row})">Save</button>
+                        <button id="canceljob${row}" class="d-none"  onclick="cancelJob(${row})">Cancel</button>
+                        <button id="removejob${row}"  onclick="removeJob(${row})">Remove</button>
+                    </td>
+                    </tr>
+                    `
+            }
+            html += "</tbody>";
+            html += "</table>";
+            return html;
+        }
+        document.querySelector('#job_area').innerHTML = createtable();
+        function updateJob(row) {
+            let tdJob2 = document.querySelector(`#job_name2_${row}`);
+            oldJobname2 = tdJob2.innerHTML;
+            //let tdJob = document.querySelector(`#job_name_${row}`);
+            //let oldJobname = tdJob.innerHTML;
+            document.querySelector(`#savejob${row}`).classList.remove('d-none');
+            document.querySelector(`#canceljob${row}`).classList.remove('d-none');
+            document.querySelector(`#editjob${row}`).classList.add('d-none');
+            //tdJob.innerHTML = `<input type='text' id='job_name3_${row}' placeholder="Nhập số thứ tự" value='${oldJobname}'>`;
+            tdJob2.innerHTML = `<input type='text' id='job_name4_${row}' placeholder="Nhập Tên Sản Phẩm" value='${oldJobname2}'>`;
+            
+        }   
+        function saveJob(row) {
+            let tdJob2 = document.querySelector(`#job_name2_${row}`);
+            let jobName2 = document.querySelector(`#job_name4_${row}`).value;
+            tdJob2.innerHTML = jobName2;
+            //let tdJob = document.querySelector(`#tr_${row} td:first-child`);
+            //let jobName = document.querySelector(`#job_name3_${row}`).value;
+            //tdJob.innerHTML = jobName;
+            document.querySelector(`#savejob${row}`).classList.add('d-none');
+            document.querySelector(`#canceljob${row}`).classList.add('d-none');
+            document.querySelector(`#editjob${row}`).classList.remove('d-none');
+
+        }
+        function cancelJob(row) {
+            let tdJob2 = document.querySelector(`#job_name2_${row}`);
+            let jobName2 = document.querySelector(`#job_name4_${row}`).getAttribute(`job_name2_${row}`);
+            //let tdJob = document.querySelector(`#job_name_${row}`);
+            //let jobName = document.querySelector(`#job_name3_${row}`).getAttribute(`job_name_${row}`);
+            //tdJob.innerHTML = jobName;
+            tdJob2.innerHTML = jobName2;
+            document.querySelector(`#savejob${row}`).classList.add('d-none');
+            document.querySelector(`#canceljob${row}`).classList.add('d-none');
+            document.querySelector(`#editjob${row}`).classList.remove('d-none');
+
+        }
+        function removeJob(row) {
+            let confirm = window.confirm('Are sure to remove this job?')
+            if (confirm) {
+                document.querySelector(`#job_name_${row}`).classList.add('done');
+                document.querySelector(`#job_name2_${row}`).classList.add('done');
+                document.querySelector(`#savejob${row}`).classList.add('done');
+                document.querySelector(`#canceljob${row}`).classList.add('done');
+                document.querySelector(`#editjob${row}`).classList.add('done');
+                document.querySelector(`#removejob${row}`).classList.add('done');
+                document.querySelector(`#tr_${row}`).classList.add('done');
+                jobCount= jobCount-1;
+                for(let i=1; i<= jobCount;i++){
+                    newnumber =  document.querySelector(`#job_name2_${i}`).innerHTML ;
+                    newnumber.innerHTML = document.querySelector(`#job_name2_${i}`)
+                }
+            }
+        }
+        function createJob() {
+            let tbJob = document.querySelector(`#job_area table tbody`);
+            let tr = document.createElement("tr");
+            
+            jobCount = jobCount+1;
+            let nameProduct = prompt('Nhập Tên Sản Phẩm : ')
+            tr.setAttribute("id", `tr_${jobCount}`)
+            tr.innerHTML = `
+                    <td id='job_name_${jobCount}'>Số ${jobCount}</td>
+                    <td id='job_name2_${jobCount}'>${nameProduct}</td>
+                    <td>
+                        <button id="editjob${jobCount}"  onclick="updateJob(${jobCount})">Edit</button>
+                        <button id="savejob${jobCount}"  class="d-none" onclick="saveJob(${jobCount})">Save</button>
+                        <button id="canceljob${jobCount}" class="d-none"  onclick="cancelJob(${jobCount})">Cancel</button>
+                        <button id="removejob${jobCount}"  onclick="removeJob(${jobCount})">Remove</button>
+                    </td>
+                    </tr>
+            `
+            tbJob.appendChild(tr);
+        }
+    </script>
+</body>
+
+</html>
