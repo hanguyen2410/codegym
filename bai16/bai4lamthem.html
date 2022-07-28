@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng Dụng Quản Lý Sản Phẩm</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 10px auto;
+            box-shadow: 3px 3px 3px rgb(41, 39, 39);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        .tb_Product {
+            width: 500px;
+            
+
+        }
+
+        .tb_Product>thead>tr {
+            background-color: rgb(3, 129, 247);
+            color: rgb(15, 10, 10);
+        }
+
+        .tb_Product,
+        .tb_Product tr,
+        .tb_Product td,
+        .tb_Product th {
+            
+            border: 1px solid gray;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        .tb_Product>tbody>tr:hover{
+            background-color: blanchedalmond;
+            cursor: pointer;
+        }
+        .add_product input{
+            width: 75%;    
+            padding: 7px 5px;
+            flex:  1;
+        }
+        .btn {
+            padding: 5px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: aqua;
+            padding: 7px;
+            padding-right: 25px;
+        }
+        .btn-edit {
+            background-color: red;
+        }
+        .btn-remove {
+            background-color: yellowgreen;
+        }
+        .btn-save {
+            background-color: rgb(121, 33, 106);
+            color: white;
+        }
+        .btn-reset {
+            background-color: rgb(225, 106, 255);
+        }
+        
+        .d-none {
+            display: none;
+        }
+
+        .add_product {
+            width: 500px;
+            text-align: center;
+        }
+        .form-control {
+            padding: 7px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="add_product">
+            <tr>
+                <td>
+                    <input type="text" onkeypress="pressEnter(event)" placeholder="Nhập tên sản phẩm" id="nameProduct">
+                    <button onclick="addProduct()" class="btn btn-primary">Add Product</button>
+                </td>
+            </tr>
+        </div>
+        <div class="list_Product">
+            <table class="tb_Product">
+                <thead>
+                    <tr>
+                        <th>Số Thứ Tự</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    var products = ["Cocacola", "Pepsi", "Sting", "Mirinda", "Aquafina"]
+    let enterKey = 13;
+    function createProduct() {
+        let html = "";
+        for (let i = 0; i < products.length; i++) {
+            html += `
+                    <tr id="tr_${i}">
+                        <td>${i + 1}</td>
+                        <td>${products[i]}</td>
+                        <td>
+                            <button class="btn btn-edit" id="btn_edit${i}" onclick="editProduct(${i})">Edit</button>
+                            <button class="btn btn-save d-none" onclick="saveProduct(${i})" id="btn_save${i}">Save</button>
+                            <button class="btn btn-reset d-none" onclick="resetProduct(${i})" id="btn_reset${i}">Cancel</button>
+                            <button class="btn btn-remove" onclick="removeProduct(${i})" id="btn_remove${i}">Remove</button>
+                        </td>
+                    </tr> 
+            `;
+        }
+        document.querySelector('.tb_Product>tbody').innerHTML = html;
+    }
+
+    function addProduct() {
+        let jobProduct = document.querySelector("#nameProduct").value;
+        if (jobProduct == null || jobProduct == "") {
+            alert("Jobproduct is required!");
+            return
+        }
+        products.push(jobProduct)
+        createProduct();
+        document.querySelector("#nameProduct").value = null;
+    }
+
+    function removeProduct(index) {
+        let confirmed = window.confirm("Are you sure remove this Product?")
+        if (confirmed) {
+            products.splice(index, 1);
+            createProduct();
+        }
+    }
+    function editProduct(index) {
+        let tr = document.querySelector(`#tr_${index}`);
+        let oldProductname = products[index];
+        tr.children[1].innerHTML = `<input class="form-control" onfocus="this.select()" id="productName_${index}" type="text" value="${oldProductname}">`
+        document.querySelector(`#btn_edit${index}`).classList.add('d-none');
+        document.querySelector(`#btn_reset${index}`).classList.remove('d-none');
+        document.querySelector(`#btn_save${index}`).classList.remove('d-none');
+    }
+    function resetProduct(index) {
+        let tr = document.querySelector(`#tr_${index}`);
+        let oldProductname = products[index];
+        tr.children[1].innerHTML = oldProductname;
+        document.querySelector(`#btn_reset${index}`).classList.add('d-none');
+        document.querySelector(`#btn_save${index}`).classList.add('d-none');
+        document.querySelector(`#btn_edit${index}`).classList.remove('d-none');
+    }
+    function saveProduct(index) {
+        let newProductname = document.querySelector(`#productName_${index}`).value
+        if (newProductname == null || newProductname == "") {
+            alert('Jobname is required!')
+            return;
+        }
+        products[index] = newProductname;
+        resetProduct(index);
+    }
+    function pressEnter(e) {
+        if (e.keyCode == enterKey) {
+            addProduct();
+        }
+    }
+    function main() {
+        createProduct();
+    }
+    main();
+</script>
+
+</html>
