@@ -40,6 +40,20 @@
                         <li class="menu-item">
                             <a href="#contact">Liên Hệ</a>
                         </li>
+                        <li class="menu-item">
+                            <a onclick="openLogin()" id="open-login">Đăng Nhập</a>
+                        </li>
+                        <li class="menu-item">
+                            <p class="d-none" id="userName_1">Username:</p>
+                            <input type="text" id="userName_2" class="user-name d-none" placeholder="Vui lòng nhập username">
+                        </li>
+                        <li class="menu-item">
+                            <p class="d-none" id="passWord_1">Password:</p>
+                            <input type="password" id="passWord_2" class="passWord d-none" placeholder="Vui lòng nhập password">
+                        </li>
+                        <li class="menu-item">
+                            <button class="order btn d-none" id="btn-checklogin" onclick="checkLogin()" >Đăng Nhập</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -105,24 +119,24 @@
                     <button class="menu-button" onclick="drink()">Đồ Uống</button>
                 </div>
                 <div class="menu-title">
-                    <p>Food Name</p>
-                    <input type="text" name="" id="addNameMenu" placeholder="Tên Món Ăn">
-                    <p>Prices</p>
-                    <input type="text" name="" id="addPricesMenu" placeholder="Giá Tiền">
-                    <p>Images</p>
-                    <input type="url" name="" id="addImgMenu" placeholder="Ảnh Menu">
+                    <p class="d-none" id="foodName">Food Name</p>
+                    <input type="text" name="" id="addNameMenu" placeholder="Tên Món Ăn" class="d-none">
+                    <p class="d-none" id="priceName">Prices</p>
+                    <input type="text" name="" id="addPricesMenu" placeholder="Giá Tiền" class="d-none">
+                    <p class="d-none" id="imagesName">Images</p>
+                    <input type="url" name="" id="addImgMenu" placeholder="Ảnh Menu" class="d-none">
                 </div>
                 <div class="menu-title">
-                    <button class="btn-menu" onclick="addMorning()">
+                    <button class="btn-menu d-none" onclick="addMorning()" id="addMorning">
                         Add Morning
                     </button>
-                    <button class="btn-menu" onclick="addLunch()">
+                    <button class="btn-menu d-none" onclick="addLunch()" id="addLunch">
                         Add Lunch
                     </button>
-                    <button class="btn-menu" onclick="addNight()">
+                    <button class="btn-menu d-none" onclick="addNight()" id="addNight">
                         Add Night
                     </button>
-                    <button class="btn-menu" onclick="addDrink()">
+                    <button class="btn-menu d-none" onclick="addDrink()" id="addDrink">
                         Add Drinks
                     </button>
                 </div>
@@ -442,8 +456,8 @@
                                     <th>Tên Bạn</th>
                                 </tr>
                                 <tr>
-                                    <td><input type="date" name="" id="dateOrder"></td>
-                                    <td><input type="text" name="" id="nameOrder" placeholder="Name"></td>
+                                    <td><input type="date" onkeypress="pressEnter(event)" name="" id="dateOrder"></td>
+                                    <td><input type="text" onkeypress="pressEnter(event)" name="" id="nameOrder" placeholder="Name"></td>
 
                                 </tr>
                                 <tr>
@@ -452,16 +466,16 @@
 
                                 </tr>
                                 <tr>
-                                    <td><input type="time" name="" id="timeOrder"></td>
-                                    <td><input type="number" name="" id="phoneOrder" placeholder="Phone"></td>
+                                    <td><input type="time" onkeypress="pressEnter(event)"  name="" id="timeOrder"></td>
+                                    <td><input type="number" onkeypress="pressEnter(event)" name="" id="phoneOrder" placeholder="Phone"></td>
                                 </tr>
                                 <tr>
                                     <th>Số người</th>
                                     <th>Email</th>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="" id="personOrder" placeholder="Số Người Trong Đoàn"></td>
-                                    <td><input type="text" name="" id="emailOrder" placeholder="Email"></td>
+                                    <td><input type="text" name="" onkeypress="pressEnter(event)" id="personOrder" placeholder="Số Người Trong Đoàn"></td>
+                                    <td><input type="text" name="" onkeypress="pressEnter(event)" id="emailOrder" placeholder="Email"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><button class="btn-order" onclick="orderButton()">Đặt Bàn</button></td>
@@ -497,9 +511,9 @@
         </div>
     </section>
     <section class="checkOrder">
-        <div class="container">
+        <div class="container1">
             <div class="row justify-content">
-                <div>
+                <div id="table-booking">
                     <table border="1" class="tb-order1">
                         <thead>
                             <div class="section-title-mid">
@@ -513,6 +527,7 @@
                             <th class="th-order">Phone</th>
                             <th class="th-order">Số Người</th>
                             <th class="th-order">Email</th>
+                            <th class="th-order">XXX</th>
                         </tr>
                         </thead>
                     <tbody class="tboy-order">

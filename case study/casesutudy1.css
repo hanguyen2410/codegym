@@ -121,6 +121,12 @@ a {
     transform: rotate(135deg);
 
 }
+#btn-checklogin {
+    margin: 8px;
+}
+#open-login {
+    cursor: pointer;
+}
 
 .total .menu-bar span::before {
     height: 100%;
@@ -160,6 +166,14 @@ a {
     transform: translateX(0);
 }
 
+.menu-item p {
+    color: var(--text-color);
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+}
+.menu-item input {
+    padding: 5px;
+}
 .menu-items a {
     color: var(--text-color);
     line-height: 40px;
@@ -421,6 +435,8 @@ a {
     padding: 12px;
     position: relative;
     cursor: pointer;
+    margin-left: 200px;
+    
 }
 
 .food-items::before {
@@ -431,6 +447,7 @@ a {
     right: 15px;
     bottom: 0;
     width: 100%;
+    border: 0.1px dotted var(--text-color)
 }
 
 .food-items:hover .food-item p {
@@ -570,9 +587,11 @@ a {
 .checkOrder {
 background-color: var(--sub-color);
 }
+.container1{
+    margin-left: 80px;
+}
 .tb-order1 {
     padding: 15px;
-    font-size: 25px;
     border: 1px;
     width: 100%;
     color: var(--text2-color);
@@ -584,10 +603,40 @@ background-color: var(--sub-color);
     margin-bottom: 15px;
 }
 .tb-order1 thead tr th {
-    padding: 20px;
+    padding: 40px;
+    font-size: 25px;
     font-family: 'Dancing Script';
+
 }
 .tb-order1 tbody tr td {
     padding: 15px;
+    font-size: 20px;
     text-align: center;
+}
+
+.div-item {
+    width: 100%;
+    display: flex;
+}
+.btn-booking {
+    background-color: transparent;
+    padding: 12px 20px;
+    border: 2px solid var(--text2-color);
+    border-radius: 50px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 15px;
+}
+.btn-booking:hover {
+    color: var(--text-color);
+    background-color: var(--main-color);
+
+}
+.tboy-order tr td input {
+font-size: 15px;
+padding: 10px 8px;
+background-color: var(--text-color);
+font-family:'Roboto', sans-serif;
+
 }
