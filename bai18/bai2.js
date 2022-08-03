@@ -1,9 +1,8 @@
-function Hero(image, top, left, size,speed){
+function Hero(image, top, left, size){
     this.image = image;
     this.top = top;
     this.left = left;
     this.size = size;
-    this.speed = speed;
   
     this.getHeroElement = function(){
       return '<img width="'+ this.size + '"' +
@@ -13,7 +12,7 @@ function Hero(image, top, left, size,speed){
     }
   
     this.moveRight = function(){
-      this.left += 30;
+      this.left += 40;
       console.log('ok: ' + this.left);
     }
     
