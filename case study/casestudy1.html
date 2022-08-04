@@ -106,12 +106,6 @@
                 </div>
             </div>
             <div class="row">
-                <!-- <div class="menu-title">
-                    <button class="menu-button active" data-title="#morning">Sáng</button>
-                    <button class="menu-button" data-title="#lunch">Trưa</button>
-                    <button class="menu-button" data-title="#night">Tối</button>
-                    <button class="menu-button" data-title="#drink">Đồ Uống</button>
-                </div> -->
                 <div class="menu-title">
                     <button class="menu-button" onclick="morning()">Sáng</button>
                     <button class="menu-button" onclick="lunch()">Trưa</button>
@@ -119,11 +113,11 @@
                     <button class="menu-button" onclick="drink()">Đồ Uống</button>
                 </div>
                 <div class="menu-title">
-                    <p class="d-none" id="foodName">Food Name</p>
+                    <p class="d-none" id="foodName">Tên Món Ăn</p>
                     <input type="text" name="" id="addNameMenu" placeholder="Tên Món Ăn" class="d-none">
-                    <p class="d-none" id="priceName">Prices</p>
+                    <p class="d-none" id="priceName">Giá Tiền</p>
                     <input type="text" name="" id="addPricesMenu" placeholder="Giá Tiền" class="d-none">
-                    <p class="d-none" id="imagesName">Images</p>
+                    <p class="d-none" id="imagesName">Hình Ảnh</p>
                     <input type="url" name="" id="addImgMenu" placeholder="Ảnh Menu" class="d-none">
                 </div>
                 <div class="menu-title">
@@ -143,300 +137,16 @@
             </div>
             <div class="row justify-content">
                <div class="menu-item-content " id="morning">
-                     <!-- <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang1.jpg">
-                            <p>Bánh Mì Xíu Mại</p>
-                        </div>
-                        <div class="food-price">
-                            <p>15.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang2.jpg">
-                            <p>Bún Bò Huế</p>
-                        </div>
-                        <div class="food-price">
-                            <p>25.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang3.jpg">
-                            <p>Phở Bò</p>
-                        </div>
-                        <div class="food-price">
-                            <p>25.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang4.jpg">
-                            <p>Xôi Gà</p>
-                        </div>
-                        <div class="food-price">
-                            <p>25.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang5.jpg">
-                            <p>Bánh Cuốn Hà Nội</p>
-                        </div>
-                        <div class="food-price">
-                            <p>20.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang6.jpg">
-                            <p>Bún Hến</p>
-                        </div>
-                        <div class="food-price">
-                            <p>10.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang7.jpg">
-                            <p>Mì Tôm Hến</p>
-                        </div>
-                        <div class="food-price">
-                            <p>10.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="ansang8.jpg">
-                            <p>Cháo Gà</p>
-                        </div>
-                        <div class="food-price">
-                            <p>20.000 VNĐ</p>
-                        </div>
-                    </div> -->
+                     
                 </div>
                 <div class="menu-item-content d-none" id="lunch">
-                    <!-- <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu1.jpg">
-                            <p>Tôm Càng Xanh</p>
-                        </div>
-                        <div class="food-price">
-                            <p>300.000 VNĐ/1KG</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu2.jpg">
-                            <p>Gà Đồi Hấp Hành</p>
-                        </div>
-                        <div class="food-price">
-                            <p>350.000 VNĐ/1Con</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu3.jpg">
-                            <p>Cá Vược Hấp Cà</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ/1kg</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu4.jpg">
-                            <p>Sườn Chua Ngọt</p>
-                        </div>
-                        <div class="food-price">
-                            <p>180.000 VNĐ/1KG</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu5.jpg">
-                            <p>Rau Muống Xào Tỏi</p>
-                        </div>
-                        <div class="food-price">
-                            <p>30.000 VNĐ/1 Dĩa</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu6.jpg">
-                            <p>Canh Chua Cá</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ/1KG</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu7.jpg">
-                            <p>Canh Rau</p>
-                        </div>
-                        <div class="food-price">
-                            <p>40.000 VNĐ/1 Tô</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu8.jpg">
-                            <p>Bò Xào Hành Tây</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ/1 Dĩa</p>
-                        </div>
-                    </div> -->
+                    
                 </div>
                 <div class="menu-item-content d-none" id="night">
-                    <!-- <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu1.jpg">
-                            <p>Tôm Càng Xanh</p>
-                        </div>
-                        <div class="food-price">
-                            <p>300.000 VNĐ/1KG</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu2.jpg">
-                            <p>Gà Đồi Hấp Hành</p>
-                        </div>
-                        <div class="food-price">
-                            <p>350.000 VNĐ/1Con</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu3.jpg">
-                            <p>Cá Vược Hấp Cà</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ/1kg</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu4.jpg">
-                            <p>Sườn Chua Ngọt</p>
-                        </div>
-                        <div class="food-price">
-                            <p>180.000 VNĐ/1KG</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu5.jpg">
-                            <p>Rau Muống Xào Tỏi</p>
-                        </div>
-                        <div class="food-price">
-                            <p>30.000 VNĐ/1 Dĩa</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu6.jpg">
-                            <p>Canh Chua Cá</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ/1KG</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu7.jpg">
-                            <p>Canh Rau</p>
-                        </div>
-                        <div class="food-price">
-                            <p>40.000 VNĐ/1 Tô</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="anhmenu8.jpg">
-                            <p>Bò Xào Hành Tây</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ/1 Dĩa</p>
-                        </div>
-                    </div> -->
+                    
                 </div>
                 <div class="menu-item-content d-none" id="drink">
-                    <!-- <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong1.jpg">
-                            <p>Coca-Cola</p>
-                        </div>
-                        <div class="food-price">
-                            <p>15.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong2.jpg">
-                            <p>Pepsi</p>
-                        </div>
-                        <div class="food-price">
-                            <p>15.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong3.jpg">
-                            <p>Mirinda</p>
-                        </div>
-                        <div class="food-price">
-                            <p>15.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong4.jpg">
-                            <p>Redbull</p>
-                        </div>
-                        <div class="food-price">
-                            <p>150.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong5.jpg">
-                            <p>Bia Huda</p>
-                        </div>
-                        <div class="food-price">
-                            <p>15.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong6.jpg">
-                            <p>Bia Sài Gòn</p>
-                        </div>
-                        <div class="food-price">
-                            <p>15.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong7.jpg">
-                            <p>Bia Heineken</p>
-                        </div>
-                        <div class="food-price">
-                            <p>25.000 VNĐ</p>
-                        </div>
-                    </div>
-                    <div class="food-items">
-                        <div class="food-item">
-                            <img src="douong8.jpg">
-                            <p>Bia Tiger</p>
-                        </div>
-                        <div class="food-price">
-                            <p>20.000 VNĐ</p>
-                        </div>
-                    </div> -->
+                    
                 </div>
             </div>
         </div>
@@ -510,7 +220,7 @@
             </div>
         </div>
     </section>
-    <section class="checkOrder">
+    <section class="checkOrder d-none">
         <div class="container1">
             <div class="row justify-content">
                 <div id="table-booking">

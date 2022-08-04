@@ -361,7 +361,7 @@ a {
 
 /* Menu */
 .menu {
-    background-color: var(--main-color);
+    background-color: #355764;
 }
 
 .menu-title {
@@ -570,10 +570,6 @@ a {
     width: 250px;
     
 }
-.order-item tbody tr td {
-
-    
-}
 .order-item tbody tr {
     text-align: center;
     
@@ -630,7 +626,7 @@ background-color: var(--sub-color);
 }
 .btn-booking:hover {
     color: var(--text-color);
-    background-color: var(--main-color);
+    background-color: var(--sub-color);
 
 }
 .tboy-order tr td input {
@@ -639,4 +635,11 @@ padding: 10px 8px;
 background-color: var(--text-color);
 font-family:'Roboto', sans-serif;
 
+}
+.tboy-order tr td:hover {
+    background-color: var(--main-color);
+}
+
+.th-order:hover {
+    background-color: var(--main-color);
 }
